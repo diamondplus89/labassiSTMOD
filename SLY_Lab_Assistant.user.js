@@ -15,9 +15,10 @@
 // @grant        GM_listValues
 // ==/UserScript==
 
+
 (async function() {
 	'use strict';
-	
+
 	//Used for reading solana data
 	let readRPCs = [
 		'https://rpc.hellomoon.io/cfd5910f-fb7d-4489-9b32-f97193eceefd',
@@ -1940,7 +1941,7 @@
 	}
 
 	function buildScanBlock(destX, destY) {
-		const { scanBlockPattern, scanBlockLength }  = globalSettings.scanBlockPattern;
+		const { scanBlockPattern, scanBlockLength }  = globalSettings;
 
 		destX = Number(destX);
 		destY = Number(destY);
@@ -2264,8 +2265,8 @@
 		document.querySelector('#scanPauseTime').value = globalSettings.scanPauseTime;
 		document.querySelector('#scanStrikeTime').value = globalSettings.scanStrikeTime;
 		document.querySelector('#statusPanelOpacity').value = globalSettings.statusPanelOpacity;
-		document.querySelector('#createPDAsOnInit').value = globalSettings.createPDAsOnInit;
-		document.querySelector('#autoStartScript').value = globalSettings.autoStartScript;
+		document.querySelector('#createPDAsOnInit').checked = globalSettings.createPDAsOnInit;
+		document.querySelector('#autoStartScript').checked = globalSettings.autoStartScript;
 		document.querySelector('#reloadPageOnFailedFleets').value = globalSettings.reloadPageOnFailedFleets;
 	}
 
